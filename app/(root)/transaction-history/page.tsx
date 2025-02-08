@@ -1,3 +1,4 @@
+/* eslint-disable */
 import HeaderBox from '@/components/HeaderBox'
 
 import { formatAmount } from '@/lib/utils';

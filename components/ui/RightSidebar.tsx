@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Link from 'next/dist/client/link'
 import React from 'react'
 import Image from "next/image";

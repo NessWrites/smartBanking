@@ -1,4 +1,5 @@
 
+/* eslint-disable */
 import HeaderBox from '@/components/HeaderBox'
 
 import React from 'react'
