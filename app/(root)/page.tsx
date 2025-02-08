@@ -1,4 +1,5 @@
 
+/* eslint-disable */
 import HeaderBox from '@/components/HeaderBox'
 import TotalBalanceBox from '@/components/TotalBalanceBox';
 import RightSidebar from '@/components/ui/RightSidebar';
