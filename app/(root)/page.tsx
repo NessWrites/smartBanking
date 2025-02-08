@@ -4,7 +4,7 @@ import HeaderBox from '@/components/HeaderBox'
 import TotalBalanceBox from '@/components/TotalBalanceBox';
 import RightSidebar from '@/components/ui/RightSidebar';
 import React from 'react'
-import Image from "next/image";
+//import Image from "next/image";
 
 const Home = () => {
 	const loggedIn = {firstName: 'Ness', lastName:'Stha',
