@@ -33,8 +33,11 @@ class LoginView(APIView):
                     'refresh': str(refresh),
                     'access': str(refresh.access_token),
                 })
+                
+                
             return Response({"message": "Invalid password"}, status=status.HTTP_400_BAD_REQUEST)
         except User.DoesNotExist:
+            
             return Response({"message": "User not found"}, status=status.HTTP_400_BAD_REQUEST)
 
 # 3. User Info View (Authenticated Users Only)
@@ -44,3 +47,5 @@ class UserInfoView(APIView):
     def get(self, request):
         serializer = UserSerializer(request.user)
         return Response(serializer.data)
+
+
