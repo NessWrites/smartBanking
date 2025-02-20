@@ -23,10 +23,10 @@ class CreateUserView(APIView):
 # 2. Login View
 class LoginView(APIView):
     def post(self, request):
-        phone = request.data.get('phone')
+        username = request.data.get('username')
         password = request.data.get('password')
         try:
-            user = User.objects.get(phone=phone)
+            user = User.objects.get(username=username)
             if user.check_password(password):
                 refresh = RefreshToken.for_user(user)
                 return Response({
