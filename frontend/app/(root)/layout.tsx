@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         if (!response.ok) throw new Error("Failed to fetch user data");
 
         const data = await response.json();
-        setUser({ firstName: data.firstName, lastName: data.lastName });
+        setUser({ firstName: data.firstName, lastName: data.lastName});
       } catch (error) {
         console.error("Error fetching user data:", error);
       } finally {

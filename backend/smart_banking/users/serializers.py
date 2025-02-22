@@ -1,27 +1,28 @@
 from rest_framework import serializers
-from .models import User
+from .models import User, AccountType, Transaction, TransactionType
+
+class AccountTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AccountType
+        fields = '__all__'
+
+
 
 class UserSerializer(serializers.ModelSerializer):
+ 
+
     class Meta:
         model = User
-        fields = ['id', 'firstName', 'lastName',
-                  'address', 'district','city',
-                  'provinces', 'dateOfBirth', 'panNumber',
-                  'email','phone','username', 'password','accountNumber']
+        fields = ['id', 'firstName', 'lastName', 'address', 'district', 'city', 'province',
+                  'dateOfBirth', 'panNumber', 'email', 'phone', 'username', 'accountNumber']
         extra_kwargs = {'password': {'write_only': True}}
 
-class CreateUserSerializer(serializers.ModelSerializer):
+class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
-        fields = ['firstName', 'lastName',
-                  'address', 'district', 'city',
-                  'provinces', 'dateOfBirth', 'panNumber',
-                  'email', 'phone', 'username', 'password', 'accountNumber']
-        extra_kwargs = {'password': {'write_only': True}}
+        model = Transaction
+        fields = '__all__'
 
-    def create(self, validated_data):  # Correct indentation
-        password = validated_data.pop('password')  # Extract password
-        user = User(**validated_data)  # Create user instance without password
-        user.set_password(password)  # Hash the password
-        user.save()  # Save the user
-        return user
+class TransactionTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TransactionType
+        fields = '__all__'
